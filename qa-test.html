@@ -29,7 +29,7 @@
 
     <!-- Main Test Content -->
     <div id="testContent" class="container py-5 d-none">
-        <div class="d-flex justify-content-between mb-3">
+        <div class="d-flex justify-content-between mb-3 sticky-top bg-light py-3">
             <div class="d-flex align-items-center">
                 <span class="me-2">Time left:</span>
                 <div id="timer" class="h3 text-danger mb-0">45:00</div>
@@ -45,11 +45,12 @@
             </div>
             <div class="card-body">
                 <div class="mb-4">
-                    <h3 class="h6">Description:</h3>
-                    <p>You are given a function for categorizing order values into price categories. The
+                    <p>You are given a function for categorising order values into price categories. The
                         <code>getPriceCategory</code> function takes an order value and returns either "success" or
-                        "fail".</p>
-                    <p>Your task is to understand for which values the function fail.</p>
+                        "fail".
+                    </p>
+                    <p>Your task is to understand the mathematical pattern(s) that determine whether the value results in a succecss or a
+                        fail.</p>
                     <p>Here are some example results from existing orders:</p>
                     <ul class="mb-3">
                         <li><code>getPriceCategory(3)</code> → success</li>
@@ -73,7 +74,7 @@
                         <label class="form-label"><strong>Your answer:</strong></label>
                         <div class="col-12">
                             <textarea id="task1Answer" class="form-control" rows="4"
-                                placeholder="Describe the pattern you've discovered here..."></textarea>
+                                placeholder="Describe the pattern you've discovered..."></textarea>
                         </div>
                     </div>
                 </div>
@@ -87,7 +88,6 @@
             </div>
             <div class="card-body">
                 <div class="mb-4">
-                    <h3 class="h6">Description:</h3>
                     <p>Following a major service disruption last week, our Network Operations team has implemented new
                         criteria for identifying critical events that require immediate attention. You are part of the
                         QA team validating the new incident detection system.</p>
@@ -120,20 +120,17 @@
             </div>
             <div class="card-body">
                 <div class="mb-4">
-                    <h3 class="h6">Description:</h3>
                     <p>Our system includes a function that should calculate the number of whole hours between two given
-                        dates.</p>
+                        dates for scheduling reasons. The dates are given in the format MM/DD/YYYY HH:mm</p>
                     <p>Test the function with different inputs and identify all potential issues and bugs in its
                         implementation.</p>
                     <div class="mb-4">
                         <div class="mb-3">
-                            <label class="form-label"><strong>First Date/Time</strong><br><small>(MM/DD/YYYY
-                                    HH:mm):</small></label>
+                            <label class="form-label"><strong>First Date/Time</strong></label>
                             <input type="text" id="date1Input" class="form-control" value="02/14/2024 05:00">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label"><strong>Second Date/Time</strong><br><small>(MM/DD/YYYY
-                                    HH:mm):</small></label>
+                            <label class="form-label"><strong>Second Date/Time</strong></label>
                             <input type="text" id="date2Input" class="form-control" value="02/15/2024 07:00">
                         </div>
                         <button class="btn btn-primary" onclick="DateTask.testDates()">Calculate Hours Between</button>
@@ -153,7 +150,6 @@
             </div>
             <div class="card-body">
                 <div class="mb-4">
-                    <h3 class="h6">Description:</h3>
                     <p>You are testing the security of requests based on their transport protocol and payload status.
                         The rule is: "If using HTTP, the payload must be encrypted." You have the following information
                         about four requests:</p>
@@ -168,44 +164,16 @@
                 <div class="row">
                     <div class="col-12">
                         <textarea id="task4Answer" class="form-control" rows="4"
-                            placeholder="Write your answer here (e.g., which request need verification)"></textarea>
+                            placeholder="Which requests need further verification?"></textarea>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Task 5: Scheduling Test Cases with Dependencies -->
+        <!-- Task 5: Probability of Module Failures -->
         <div class="card mb-5">
             <div class="card-header bg-primary text-white">
-                <h2 class="h5 mb-0">Task 5: Scheduling Test Cases with Dependencies</h2>
-            </div>
-            <div class="card-body">
-                <div class="mb-4">
-                    <h3 class="h6">Description:</h3>
-                    <p>You have five test cases with execution times and dependencies:</p>
-                    <ul>
-                        <li>T1: 10 minutes</li>
-                        <li>T2: 15 minutes</li>
-                        <li>T3: 20 minutes, cannot start until T1 and T2 are completed</li>
-                        <li>T4: 25 minutes, cannot start until T2 is completed</li>
-                        <li>T5: 30 minutes, cannot start until T3 and T4 are completed</li>
-                    </ul>
-                    <p>You have two testing machines that run tests in parallel. What is the minimum total time to
-                        complete all test cases?</p>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <textarea id="task5Answer" class="form-control" rows="4"
-                            placeholder="Provide the answer..."></textarea>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Task 6: Probability of Module Failures -->
-        <div class="card mb-5">
-            <div class="card-header bg-primary text-white">
-                <h2 class="h5 mb-0">Task 6: Probability of Module Failures</h2>
+                <h2 class="h5 mb-0">Task 5: Probability of Module Failures</h2>
             </div>
             <div class="card-body">
                 <div class="mb-4">
@@ -216,97 +184,103 @@
                         <li>Module B: 10%</li>
                         <li>Module C: 2%</li>
                     </ul>
-                    <p>What is the probability that exactly one module fails during a test run? Provide your answer (you
-                        can provide it as a formula).</p>
+                    <p>What is the probability that <strong>exactly one module fails</strong> during a test run? You
+                        may provide it as a formula.</p>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <textarea id="task6Answer" class="form-control" rows="4"
-                            placeholder="Probability as a number or a formula..."></textarea>
+                        <textarea id="task5Answer" class="form-control" rows="4"
+                            placeholder="The probability as a formula or a number..."></textarea>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Task 7: Test Environment Deployment Scheduling -->
+        <!-- Task 6: Test Environment Deployment Scheduling -->
         <div class="card mb-5">
             <div class="card-header bg-primary text-white">
-                <h2 class="h5 mb-0">Task 7: Test Environment Deployment Scheduling</h2>
+                <h2 class="h5 mb-0">Task 6: Test Environment Deployment Scheduling</h2>
             </div>
             <div class="card-body">
                 <div class="mb-4">
-                    <h3 class="h6">Description:</h3>
                     <p>You have 3 test environments: Dev, Stage, and Prod. Each build takes 2 hours to deploy and must
                         be deployed in sequence. If a build fails, you must wait 1 hour before retrying. You need all
-                        environments updated by 5 PM. What's the latest time you can start the first deployment if you
+                        environments updated by 5 PM. </p>
+                        <p>What's the latest time you can start the first deployment if you
                         want to have one retry attempt available for each environment?</p>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <textarea id="task7Answer" class="form-control" rows="4"
-                            placeholder="Provide the schedule and explain your approach..."></textarea>
+                        <textarea id="task6Answer" class="form-control" rows="4"
+                            placeholder="What is the latest time you can start?"></textarea>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Task 8: Defect Probability in Batches -->
+        <!-- Task 7: Defect Probability in Batches -->
         <div class="card mb-5">
             <div class="card-header bg-primary text-white">
-                <h2 class="h5 mb-0">Task 8: Defect Probability in Batches</h2>
+                <h2 class="h5 mb-0">Task 7: Defect Probability in Batches</h2>
             </div>
             <div class="card-body">
                 <div class="mb-4">
-                    <h3 class="h6">Description:</h3>
                     <p>A module has a 2% defect rate. If you test 50 randomly selected modules, what's the probability
-                        of finding at least one defective module? Provide the answer either as a formula or a number.
+                        of finding at least one defective module?
                     </p>
+                    <p>Provide the answer either as a formula or a number.</p>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <textarea id="task7Answer" class="form-control" rows="4"
+                            placeholder="The probability as a formula or a number..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task 8: SQL Query Problems -->
+        <div class="card mb-5">
+            <div class="card-header bg-primary text-white">
+                <h2 class="h5 mb-0">Task 8: SQL Query Problems</h2>
+            </div>
+            <div class="card-body">
+                <div class="mb-4">
+                    <p>You run the following <code>DELETE</code> SQL query to remove certain rows from our database.</p>
+                    <p><code>DELETE e FROM employees e JOIN departments d ON e.department_id = d.department_id WHERE d.name = 'Human Resources' AND e.hire_date < '2020-01-01' AND e.performance_rating < 3;</code>
+                    </p>
+                    <p>After running the query, no rows were deleted. What are some possible reasons for this?</p>
+
                 </div>
                 <div class="row">
                     <div class="col-12">
                         <textarea id="task8Answer" class="form-control" rows="4"
-                            placeholder="The probabilities as a formula or a number..."></textarea>
+                            placeholder="List some possible reasons..."></textarea>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Task 9: Bug Environment Deduction -->
+        <!-- Task 9: HTTP requests -->
         <div class="card mb-5">
             <div class="card-header bg-primary text-white">
-                <h2 class="h5 mb-0">Task 9: Bug Environment Deduction</h2>
+                <h2 class="h5 mb-0">Task 9: API Endpoint Investigations</h2>
             </div>
             <div class="card-body">
                 <div class="mb-4">
-                    <h3 class="h6">Description:</h3>
-                    <p>A bug occurs only when both of the following conditions are met:</p>
-                    <ul>
-                        <li>The OS is Linux <strong>or</strong> the browser is Firefox.</li>
-                        <li>The screen resolution is 1080p <strong>and</strong> the browser is <strong>not</strong>
-                            Chrome.</li>
-                    </ul>
-                    <p>Consider the following environments:</p>
-                    <ol>
-                        <li>OS: Linux, Browser: Firefox, Resolution: 1080p</li>
-                        <li>OS: Windows, Browser: Firefox, Resolution: 1080p</li>
-                        <li>OS: Linux, Browser: Chrome, Resolution: 1080p</li>
-                        <li>OS: Windows, Browser: Edge, Resolution: 1080p</li>
-                        <li>OS: Linux, Browser: Firefox, Resolution: 720p</li>
-                    </ol>
-                    <p>Which of these environments will definitely reproduce the bug? List the numbers and explain your
-                        reasoning.</p>
+                    <p>When designing an API endpoint that handles user authentication, what are some potential issues you should test for to ensure secure and efficient operation?</p>
                 </div>
                 <div class="row">
                     <div class="col-12">
                         <textarea id="task9Answer" class="form-control" rows="4"
-                            placeholder="Identify the environments and explain your reasoning..."></textarea>
+                            placeholder="List some potential issues..."></textarea>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="text-center">
-            <button id="submitBtn" class="btn btn-success btn-lg" onclick="endTest()">Submit Results</button>
+            <button id="submitBtn" class="btn btn-success btn-lg" onclick="endTest()">End Test</button>
         </div>
     </div>
 
@@ -325,8 +299,7 @@
                     <label class="form-label">Email</label>
                     <input type="email" class="form-control" id="candidateEmail" required>
                 </div>
-                <button type="button" class="btn btn-primary btn-lg" onclick="generateFinalSubmission()">Submit Test
-                    Results</button>
+                <button type="button" class="btn btn-primary btn-lg" onclick="generateFinalSubmission()">Continue</button>
             </form>
         </div>
     </div>
@@ -339,8 +312,7 @@
                 <p class="mb-2">Please:</p>
                 <ol class="mb-0">
                     <li>Copy the XML below</li>
-                    <li>Send it to <strong>jobs@glite.ai</strong></li>
-                    <li>Use subject: <strong>"QA Test Results"</strong></li>
+                    <li>Send it to <strong>charlie@glite.ai</strong></li>
                 </ol>
             </div>
             <div class="mb-4">
